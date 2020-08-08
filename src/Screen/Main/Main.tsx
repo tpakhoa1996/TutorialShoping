@@ -5,22 +5,20 @@ import Vegetable from './Vegetable';
 import VegetableList from './VegetableList';
 import BagInfo from './BagInfo';
 import { styles } from './styles';
+import Sort from './Sort';
+import { SortType } from '../../Model/SortType';
+import { useSelector } from 'react-redux';
+import { State } from '../../Redux/Reducer';
 
 export default () => {
-    const [count, updateCount] = React.useState(4);
-
-    const handleVegetableToggle = (newVegetableState: boolean) => {
-        if (newVegetableState) {
-            updateCount((count) => count + 1);
-        } else {
-            updateCount((count) => count - 1);
-        }
-    }
+    const sortType = useSelector((state: State) => state.sortType);
+    const count = useSelector((state: State) => state.selectionCount);
 
     return (
         <View style={styles.mainContainer}>
             <Header title="Vegetables" />
-            <VegetableList onVegtableToggle={handleVegetableToggle} />
+            <Sort />
+            <VegetableList />
             <Header title={`Count: ${count}`} />
         </View>
     );

@@ -30,7 +30,7 @@ export const styles = StyleSheet.create({
 
     vegetable: {
         width: 0.4 * Dimensions.get('screen').width,
-        height: 0.4 * Dimensions.get('screen').height,
+        height: 0.4 * Dimensions.get('screen').width,
         marginTop: 10,
         marginBottom: 10,
         justifyContent: 'center',
@@ -40,5 +40,16 @@ export const styles = StyleSheet.create({
     vegetableName: {
         color: 'white',
         fontSize: theme.textSize.medium,
-    }
+    },
+
+    sortContainer: {
+        flexDirection: 'row',
+        padding: 8,
+    },
+
+    sortTypeContainer: {
+        padding: 4,
+        borderWidth: 1,
+        marginRight: 8,
+    },
 });
